@@ -32,10 +32,11 @@ const Navbar = () => {
           </a>
           <a href="#projects" className="cursor-pointer">
             Blogs
-          </a><a href="#projects" className="cursor-pointer">
-            Extra curricular
           </a>
           <a href="#projects" className="cursor-pointer">
+            Extra curricular
+          </a>
+          <a href="https://flowcv.com/resume/jbipw77gh3" className="cursor-pointer">
             Resume
           </a>
           <a href="#projects" className="cursor-pointer">

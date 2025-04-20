@@ -48,6 +48,7 @@ const HeroContent = () => {
           Humble, optimistic ambivert weaving code with care and collaboration.
         </motion.p>
         <motion.a
+          href="https://flowcv.com/resume/jbipw77gh3"
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[100px]"
         >
