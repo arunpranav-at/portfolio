@@ -24,28 +24,28 @@ const Navbar = () => {
           <a href="/education" className="cursor-pointer">
             Education
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/cpprofiles" className="cursor-pointer">
             CP Profiles
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/underconstruction" className="cursor-pointer">
             Volunteering
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/underconstruction" className="cursor-pointer">
             Blogs
           </a>
           <a href="/certifications" className="cursor-pointer">
             Certifications
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/underconstruction" className="cursor-pointer">
             Extra curricular
           </a>
           <a href="https://flowcv.com/resume/jbipw77gh3" className="cursor-pointer">
             Resume
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/underconstruction" className="cursor-pointer">
             Gallery
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/contact" className="cursor-pointer">
             Contact
           </a>
         </div>

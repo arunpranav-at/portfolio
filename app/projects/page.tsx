@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Project() {
   return (
     <main className="h-full w-full">
       <div className="flex flex-col">

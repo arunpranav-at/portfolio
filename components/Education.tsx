@@ -86,7 +86,7 @@ const EducationComponent = () => {
           Education
         </h2>
         <p className="text-gray-400 text-center max-w-[900px]">
-          My academic journey has equipped me with a strong foundation in technology and various other disciplines. Here's a look at my educational background:
+          My academic journey has equipped me with a strong foundation in technology and various other disciplines. Here is a look at my educational background:
         </p>
       </motion.div>
 

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import { TrophyIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { LinkIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 interface AchievementCardProps {
   title: string;
@@ -64,15 +65,22 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
         {imageUrl && (
           <div className="mt-4 rounded-lg overflow-hidden bg-black/50 flex items-center justify-center">
             <div className="w-full h-48 md:h-56 relative">
-              <img 
-                src={imageUrl} 
-                alt={`${title} image`} 
-                className="absolute inset-0 w-full h-full object-cover object-center rounded-lg"
+              <Image
+                src={imageUrl}
+                alt={`${title} image`}
+                fill // Automatically fills the parent container
+                style={{
+                  objectFit: 'cover', // Ensure the image covers the container area properly
+                  objectPosition: 'center', // Center the image
+                }}
+                className="rounded-lg" // Apply rounded corners
+                priority // Optional, for preloading the image
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
             </div>
           </div>
         )}
+
       </div>
     </motion.div>
   );
@@ -224,7 +232,7 @@ const achievementsData = [
   },
   {
     id: 17,
-    title: "Certificate of Scholastic Achievement - Senior Secondary School Education",
+    title: "Scholastic Achievement - Senior Secondary School Education",
     organization: "Central Board of Secondary Education",
     date: "Jul 2022",
     description: "Recognized for academic excellence in senior secondary education with demonstrated skills in content management, mathematics, communication, and programming.",
@@ -238,7 +246,7 @@ const achievementsData = [
   },
   {
     id: 19,
-    title: "Certificate of Scholastic Achievement - Secondary School Education",
+    title: "Scholastic Achievement - Secondary School Education",
     organization: "Central Board of Secondary Education",
     date: "Sep 2020",
     description: "Recognized for academic excellence in secondary education with demonstrated skills in content management, mathematics, problem-solving, and analytical thinking.",
@@ -252,14 +260,14 @@ const achievementsData = [
   },
   {
     id: 21,
-    title: "Certificate of Completion - Vani Vikas Grade - 6",
+    title: "Completion - Vani Vikas Grade - 6",
     organization: "Shabari Siksha Sansthan - Salem",
     date: "Jul 2019",
     description: "Completed Grade 6 of Hindi language proficiency program, demonstrating communication skills and analytical abilities in the language.",
   },
   {
     id: 22,
-    title: "Certificate of Merit - SOF National Science Olympiad",
+    title: "Merit - SOF National Science Olympiad",
     organization: "Science Olympiad Foundation",
     date: "Apr 2019",
     description: "Received merit recognition in the National Science Olympiad, showcasing strong problem-solving and analytical skills.",
@@ -287,14 +295,14 @@ const achievementsData = [
   },
   {
     id: 26,
-    title: "Certificate of Merit - SOF National Science Olympiad",
+    title: "Merit - SOF National Science Olympiad",
     organization: "Science Olympiad Foundation",
     date: "Apr 2018",
     description: "Received merit recognition for outstanding performance in the National Science Olympiad competition.",
   },
   {
     id: 27,
-    title: "Certificate of Achievement - Completion of Skill Development Program",
+    title: "Achievement - Completion of Skill Development Program",
     organization: "Brainobrain Kids Academy Pvt Ltd",
     date: "Apr 2018",
     description: "Successfully completed a comprehensive skill development program focusing on mathematics, analytical thinking, and problem-solving abilities.",
@@ -315,7 +323,7 @@ const achievementsData = [
   },
   {
     id: 30,
-    title: "Certificate of Merit - 10th SOF International Mathematics Olympiad",
+    title: "Merit - 10th SOF International Mathematics Olympiad",
     organization: "Science Olympiad Foundation",
     date: "Apr 2017",
     description: "Received merit recognition in the International Mathematics Olympiad, showcasing exceptional mathematical and problem-solving skills.",

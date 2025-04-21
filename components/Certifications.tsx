@@ -90,7 +90,7 @@ const CertificationsComponent = () => {
           Licenses & Certifications
         </h2>
         <p className="text-gray-400 text-center max-w-[900px]">
-          I consistently pursue learning opportunities to expand my knowledge and skillset. Below are certifications I've earned across different technology domains and competitions.
+          I consistently pursue learning opportunities to expand my knowledge and skillset. Below are certifications I have earned across different technology domains and competitions.
         </p>
       </motion.div>
 
