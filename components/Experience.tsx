@@ -83,7 +83,7 @@ const ExperienceComponent = () => {
           Professional Experience
         </h2>
         <p className="text-gray-400 text-center max-w-[700px]">
-          Building expertise through real-world challenges and innovative solutions.
+          I have had the opportunity to work with some amazing companies and teams, where I have gained valuable experience and skills. Here are some of my key experiences:
         </p>
       </motion.div>
 
@@ -137,6 +137,88 @@ const ExperienceComponent = () => {
             "Led a team of 8 developers in five projects resulting in a 70% profit increase for the company"
           ]}
           delay={0.4}
+        />
+
+        <ExperienceCard
+          title="Writer, Designer"
+          company="Impact CIT"
+          companyUrl="https://www.linkedin.com/company/impact-studentcommunity/"
+          duration="Dec 2022 - Dec 2023"
+          location="Chennai, Tamil Nadu, India · Hybrid"
+          description={[
+            "Created content utilizing skills in communication, problem solving, and analytical thinking",
+            "Contributed to organizational communications using Microsoft Office and Google Workspace"
+          ]}
+          delay={0.6}
+        />
+
+        <ExperienceCard
+          title="Full Stack Development Intern"
+          company="Cloud Counselage Pvt. Ltd."
+          companyUrl="https://www.cloudcounselage.com/"
+          duration="Jul 2023 - Oct 2023"
+          location="Remote"
+          description={[
+            "Worked with technologies including React.js, Node.js, Express.js, CSS, HTML, Firebase and Git",
+            "Collaborated remotely on full stack development projects"
+          ]}
+          delay={0.5}
+        />
+
+        <ExperienceCard
+          title="Member"
+          company="GDSC Chennai Institute of Technology"
+          companyUrl="https://gdg.community.dev/gdg-on-campus-chennai-institute-of-technology-chennai-india/"
+          duration="Oct 2022 - Dec 2023"
+          location="Chennai, Tamil Nadu, India"
+          description={[
+            "Participated in Google DSC Hackathon, reaching National Finalist status",
+            "Developed skills in multiple programming languages including JavaScript, React.js, Node.js, Python, Flask and Express.js",
+            "Worked on projects involving data structures, algorithms and various web technologies"
+          ]}
+          delay={0.8}
+        />
+
+        <ExperienceCard
+          title="Content Team Co-Lead"
+          company="Syenah"
+          companyUrl="https://www.linkedin.com/company/syenah/"
+          duration="Jan 2022 - Nov 2022"
+          location="Chennai, Tamil Nadu, India"
+          description={[
+            "Led content team creating pieces on various topics including technology and innovation",
+            "Managed content workflow and production using content management tools",
+            "Developed English language content utilizing Canva and Microsoft Office tools"
+          ]}
+          delay={0.9}
+        />
+
+        <ExperienceCard
+          title="Content Creator"
+          company="YouTube"
+          companyUrl="https://youtube.com/@mixtureofcontent-english8905?feature=shared"
+          duration="Aug 2020 - Oct 2022"
+          location="Chennai, Tamil Nadu, India"
+          description={[
+            "Created educational and informative content with a focus on technology",
+            "Managed content production using analytical skills and content management tools",
+            "Utilized Canva and other design tools for visual content creation"
+          ]}
+          delay={1.0}
+        />
+
+        <ExperienceCard
+          title="Assistant School Pupil Leader"
+          company="The Hindu Colony Chellamal Vidyalaya"
+          companyUrl="https://www.chellammalvidyalayaschool.org/"
+          duration="Apr 2018 - Jun 2019"
+          location="Chennai, Tamil Nadu, India"
+          description={[
+            "Managed and organized school events including Annual Day, Sports Day, and Science Fest",
+            "Coordinated interschool tournaments, guest lectures, and national festival celebrations",
+            "Developed leadership and event management skills while maintaining academic excellence"
+          ]}
+          delay={1.1}
         />
       </div>
     </motion.div>

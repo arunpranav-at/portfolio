@@ -25,6 +25,9 @@ const Projects = () => {
         <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-center space-title">
           My Projects
         </h1>
+        <p className="text-center text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
+          Here are some of my projects that I have worked on.
+        </p>
       </div>
 
       {/* Project Cards Grid - Reduced side margins and increased max width */}

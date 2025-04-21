@@ -18,20 +18,23 @@ const Navbar = () => {
           <a href="/experience" className="cursor-pointer">
             Experience
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/achievements" className="cursor-pointer">
             Achievements
           </a>
-          <a href="#projects" className="cursor-pointer">
+          <a href="/education" className="cursor-pointer">
             Education
           </a>
           <a href="#projects" className="cursor-pointer">
-            Profiles
+            CP Profiles
           </a>
           <a href="#projects" className="cursor-pointer">
             Volunteering
           </a>
           <a href="#projects" className="cursor-pointer">
             Blogs
+          </a>
+          <a href="/certifications" className="cursor-pointer">
+            Certifications
           </a>
           <a href="#projects" className="cursor-pointer">
             Extra curricular
