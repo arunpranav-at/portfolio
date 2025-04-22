@@ -181,7 +181,7 @@ const ContactPage = () => {
               <div className="p-6 rounded-lg bg-black/60 border border-[#7042f84f]">
                 <h3 className="text-xl font-bold text-cyan-400 mb-4">Response Time</h3>
                 <p className="text-gray-300">
-                  I typically respond to emails within 24-48 hours. For urgent matters, please mention "Urgent" in the subject line.
+                  I typically respond to emails within 24-48 hours. For urgent matters, please mention Urgent in the subject line.
                 </p>
               </div>
             </div>
