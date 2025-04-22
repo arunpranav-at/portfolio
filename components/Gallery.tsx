@@ -3,10 +3,26 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
+import Image from "next/image";
+
+// Function to shuffle the array using Fisher-Yates algorithm
+// Moved outside the component to prevent recreation on every render
+interface ShuffleArray<T> {
+  (array: T[]): T[];
+}
+
+const shuffleArray: ShuffleArray<any> = (array) => {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+};
 
 const GalleryPage = () => {
   
-  type GalleryItem = { id: number; image: string };
+  type GalleryItem = { id: number; image: string; size?: number; rotation?: number };
 
   const originalGalleryItems: GalleryItem[] = [];
 
@@ -17,24 +33,20 @@ const GalleryPage = () => {
     });
   }  
 
-  // Function to shuffle the array using Fisher-Yates algorithm
-  const shuffleArray = (array: GalleryItem[]): GalleryItem[] => {
-    const shuffledArray: GalleryItem[] = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j: number = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-    }
-    return shuffledArray;
-  };
   const [filteredItems, setFilteredItems] = useState<GalleryItem[]>([]);
-  // State management
-  // Removed duplicate declaration of filteredItems
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
   
   // Shuffle the gallery items on initial render
+  // Add size and rotation to each item once so they don't change on rerender
   useEffect(() => {
-    setFilteredItems(shuffleArray(originalGalleryItems));
-  }, []);
+    const items = shuffleArray(originalGalleryItems).map(item => ({
+      ...item,
+      size: 100 + Math.random() * 100,
+      rotation: Math.random() * 5 - 2.5
+    }));
+    
+    setFilteredItems(items);
+  }, []); // Empty dependency array as this should only run once
 
   // Animation variants
   const containerVariants = {
@@ -94,7 +106,7 @@ const GalleryPage = () => {
           className="flex flex-col items-center justify-center text-center mb-16"
         >
           <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
-            Pranav's Visual Verse
+            Pranav&apos;s Visual Verse
           </h1>
           <p className="text-gray-400 text-center max-w-[700px] text-lg">
             A curated collection of colors, moments, and ideas, captured and crafted through my lens and imagination.
@@ -117,10 +129,14 @@ const GalleryPage = () => {
             >
               {/* Image container */}
               <div className="relative bg-black flex items-center justify-center p-4">
-                <img 
+                <Image 
                   src={activeItem.image} 
                   alt="Gallery image" 
-                  className="max-w-full max-h-[70vh] object-contain rounded-lg"
+                  className="max-h-[70vh] object-contain rounded-lg"
+                  width={800}
+                  height={600}
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  priority
                 />
                 <button
                   onClick={() => setActiveItem(null)}
@@ -141,38 +157,35 @@ const GalleryPage = () => {
           className="relative"
         >
           <div className="flex flex-wrap justify-center">
-            {filteredItems.map((item) => {
-              // Calculate dynamic sizes
-              const size = 100 + Math.random() * 100; // Variable sizing between 100-200px
-              
-              return (
-                <motion.div
-                  key={item.id}
-                  variants={itemVariants}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    zIndex: 10,
-                    boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)"
-                  }}
-                  className="m-4 cursor-pointer relative"
-                  style={{ 
-                    width: size, 
-                    height: size,
-                    transform: `rotate(${Math.random() * 5 - 2.5}deg)`
-                  }}
-                  onClick={() => setActiveItem(item)}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="w-full h-full overflow-hidden rounded-lg bg-black/60 border border-[#7042f81f] hover:border-purple-500 transition-all duration-300">
-                    <img 
-                      src={item.image} 
-                      alt="Gallery image"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
+            {filteredItems.map((item) => (
+              <motion.div
+                key={item.id}
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05, 
+                  zIndex: 10,
+                  boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)"
+                }}
+                className="m-4 cursor-pointer relative"
+                style={{ 
+                  width: item.size, 
+                  height: item.size,
+                  transform: `rotate(${item.rotation}deg)`
+                }}
+                onClick={() => setActiveItem(item)}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="w-full h-full overflow-hidden rounded-lg bg-black/60 border border-[#7042f81f] hover:border-purple-500 transition-all duration-300">
+                  <Image 
+                    src={item.image} 
+                    alt="Gallery image"
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
