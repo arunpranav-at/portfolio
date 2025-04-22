@@ -225,18 +225,6 @@ const ContactPage = () => {
           </motion.div>
         </div>
       </div>
-      
-      {/* Custom CSS for twinkling stars */}
-      <style jsx global>{`
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 1; }
-        }
-        
-        .clip-hexagon {
-          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-      `}</style>
     </div>
   );
 };

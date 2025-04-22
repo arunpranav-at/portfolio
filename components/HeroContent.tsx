@@ -20,12 +20,17 @@ const HeroContent = () => {
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+          className="Welcome-box flex items-center gap-2 py-2 px-3 border border-[#7042f88b] opacity-90 rounded-md shadow-sm bg-white/10 backdrop-blur"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Optimistic Ambivert
-          </h1>
+          <a
+            href="https://www.buymeacoffee.com/arunpranavat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-500 hover:text-blue-400 transition duration-200 text-sm"
+          >
+            <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
+            <span className="Welcome-text underline">Support Me</span>
+          </a>
         </motion.div>
 
         <motion.div
@@ -50,6 +55,8 @@ const HeroContent = () => {
         <motion.a
           href="https://flowcv.com/resume/jbipw77gh3"
           variants={slideInFromLeft(1)}
+          target="_blank"
+          rel="noopener noreferrer"
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[100px]"
         >
           Resume

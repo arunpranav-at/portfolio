@@ -34,8 +34,27 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       animate="visible"
       className="w-full md:w-[900px] p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col md:flex-row items-start gap-5 hover:border-[#7042f8] transition-all duration-300 cosmic-glow mx-auto"
     >
-      <div className="flex justify-center items-center w-16 h-16 rounded-full bg-purple-900/30 border border-purple-500/50 shrink-0">
-        <TrophyIcon className="h-8 w-8 text-purple-500" />
+      <div className="flex flex-col gap-4 md:w-auto">
+        <div className="flex justify-center items-center w-16 h-16 rounded-full bg-purple-900/30 border border-purple-500/50 shrink-0">
+          <TrophyIcon className="h-8 w-8 text-purple-500" />
+        </div>
+        
+        {imageUrl && (
+          <div className="w-full md:w-64 h-48 relative rounded-lg overflow-hidden bg-black/50">
+            <Image
+              src={imageUrl}
+              alt={`${title} image`}
+              fill
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+              className="rounded-lg"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
+          </div>
+        )}
       </div>
       
       <div className="flex-1">
@@ -61,26 +80,6 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             View LinkedIn Post
           </a>
         )}
-        
-        {imageUrl && (
-          <div className="mt-4 rounded-lg overflow-hidden bg-black/50 flex items-center justify-center">
-            <div className="w-full h-48 md:h-56 relative">
-              <Image
-                src={imageUrl}
-                alt={`${title} image`}
-                fill // Automatically fills the parent container
-                style={{
-                  objectFit: 'cover', // Ensure the image covers the container area properly
-                  objectPosition: 'center', // Center the image
-                }}
-                className="rounded-lg" // Apply rounded corners
-                priority // Optional, for preloading the image
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
-            </div>
-          </div>
-        )}
-
       </div>
     </motion.div>
   );
@@ -222,7 +221,6 @@ const achievementsData = [
     linkedInPost: "https://www.linkedin.com/posts/arunpranavat_won-prize-quiz-activity-7257076518256877568-QB0w?utm_source=share&utm_medium=member_desktop&rcm=ACoAADYQaHYBcELnKkTGGyekbUdJr2u1TDjpK4k",
     imageUrl: "/achievements/gk-quiz.png"
   },
-  // New achievements added below
   {
     id: 16,
     title: "Silver Badge - Three Stars in Python",

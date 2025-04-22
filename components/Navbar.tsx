@@ -27,22 +27,32 @@ const Navbar = () => {
           <a href="/cpprofiles" className="cursor-pointer">
             CP Profiles
           </a>
-          <a href="/underconstruction" className="cursor-pointer">
+          <a href="/volunteering" className="cursor-pointer">
             Volunteering
-          </a>
-          <a href="/underconstruction" className="cursor-pointer">
-            Blogs
           </a>
           <a href="/certifications" className="cursor-pointer">
             Certifications
           </a>
           <a href="/underconstruction" className="cursor-pointer">
-            Extra curricular
+            Blogs
           </a>
-          <a href="https://flowcv.com/resume/jbipw77gh3" className="cursor-pointer">
+          <a
+            href="https://www.buymeacoffee.com/arunpranavat"
+            className="cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            Support me
+          </a>
+          <a
+            href="https://flowcv.com/resume/jbipw77gh3"
+            className="cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             Resume
           </a>
-          <a href="/underconstruction" className="cursor-pointer">
+          <a href="/gallery" className="cursor-pointer">
             Gallery
           </a>
           <a href="/contact" className="cursor-pointer">
