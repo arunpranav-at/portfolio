@@ -1,69 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { RxInstagramLogo, RxLinkedinLogo, RxGithubLogo } from "react-icons/rx";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
-import { IoSendSharp } from "react-icons/io5";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  interface FormData {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
-  };
-
   const contactMethods = [
     {
       id: 1,
       icon: <MdOutlineMarkEmailUnread className="h-8 w-8 text-purple-400" />,
       title: "Email",
       value: "pranav9176@gmail.com",
-      link: "mailto:pranav9176@gmail.com",
       color: "from-purple-500 to-cyan-500",
     }
   ];
@@ -101,7 +51,7 @@ const ContactPage = () => {
       icon: <HiOutlineMail className="h-8 w-8" />,
       name: "Email",
       username: "pranav9176@gmail.com",
-      link: "mailto:pranav9176@gmail.com",
+      link: "#",
       color: "bg-[#EA4335]",
       hoverColor: "hover:bg-[#D33426]",
     },
@@ -158,10 +108,7 @@ const ContactPage = () => {
           className="grid grid-cols-1 gap-8 mb-16"
         >
           {contactMethods.map((method) => (
-            <a
-              href={method.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               key={method.id}
               className="group"
             >
@@ -184,14 +131,15 @@ const ContactPage = () => {
                 {/* Content */}
                 <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
                 <p className="text-purple-300">{method.value}</p>
+                <p className="text-gray-400 mt-2">Please copy this email address and send your message directly from your preferred email client.</p>
               </motion.div>
-            </a>
+            </div>
           ))}
         </motion.div>
 
-        {/* Contact Form and Social Profiles Grid */}
+        {/* Contact Info and Social Profiles Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
+          {/* Contact Information */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -199,96 +147,44 @@ const ContactPage = () => {
             className="lg:col-span-2 rounded-2xl bg-black/40 backdrop-blur-md border border-[#7042f81f] overflow-hidden p-8"
           >
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-6">
-              Send a Message
+              Contact Information
             </h2>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg bg-black/60 border border-[#7042f84f] text-white py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="John Doe"
-                  />
+            <div className="space-y-6">
+              <div className="p-6 rounded-lg bg-black/60 border border-[#7042f84f]">
+                <h3 className="text-xl font-bold text-purple-400 mb-4">How to Contact Me</h3>
+                <p className="text-gray-300 mb-4">
+                  You can send me an email at the address below:
+                </p>
+                <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-4 flex items-center justify-between">
+                  <span className="text-purple-300 font-mono">pranav9176@gmail.com</span>
+                  <button 
+                    onClick={() => {
+                      navigator.clipboard.writeText("pranav9176@gmail.com");
+                      alert("Email copied to clipboard!");
+                    }}
+                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm transition-colors duration-300"
+                  >
+                    Copy
+                  </button>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg bg-black/60 border border-[#7042f84f] text-white py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="john@example.com"
-                  />
-                </div>
+                <p className="text-gray-400 mt-4">
+                  When sending an email, please include:
+                </p>
+                <ul className="list-disc list-inside text-gray-400 mt-2 space-y-1">
+                  <li>Your name</li>
+                  <li>A detailed description of your inquiry or project</li>
+                  <li>Any relevant timeline information</li>
+                </ul>
               </div>
               
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-lg bg-black/60 border border-[#7042f84f] text-white py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="How can I help you?"
-                />
+              <div className="p-6 rounded-lg bg-black/60 border border-[#7042f84f]">
+                <h3 className="text-xl font-bold text-cyan-400 mb-4">Response Time</h3>
+                <p className="text-gray-300">
+                  I typically respond to emails within 24-48 hours. For urgent matters, please mention "Urgent" in the subject line.
+                </p>
               </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full rounded-lg bg-black/60 border border-[#7042f84f] text-white py-3 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  placeholder="Your message here..."
-                />
-              </div>
-              
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`flex items-center justify-center space-x-2 w-full py-4 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-medium text-center transition-all duration-300 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <IoSendSharp className="h-5 w-5" />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-                
-                {submitSuccess && (
-                  <div className="mt-4 p-3 bg-green-400/20 border border-green-500 text-green-300 rounded-lg text-center">
-                    Thank you! Your message has been sent successfully.
-                  </div>
-                )}
-              </div>
-            </form>
+            </div>
           </motion.div>
           
           {/* Social Profiles */}
@@ -306,9 +202,14 @@ const ContactPage = () => {
               {socialLinks.map((social) => (
                 <a
                   key={social.id}
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={social.id !== 4 ? social.link : "#"} 
+                  onClick={social.id === 4 ? (e) => {
+                    e.preventDefault();
+                    navigator.clipboard.writeText("pranav9176@gmail.com");
+                    alert("Email copied to clipboard!");
+                  } : undefined}
+                  target={social.id !== 4 ? "_blank" : undefined}
+                  rel={social.id !== 4 ? "noopener noreferrer" : undefined}
                   className={`flex items-center gap-4 p-4 rounded-lg ${social.color} ${social.hoverColor} transition-all duration-300`}
                 >
                   <div className="bg-white/10 rounded-full p-2">
