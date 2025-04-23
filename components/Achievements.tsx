@@ -34,13 +34,13 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       animate="visible"
       className="w-full md:w-[900px] p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col md:flex-row items-start gap-5 hover:border-[#7042f8] transition-all duration-300 cosmic-glow mx-auto"
     >
-      <div className="flex flex-col gap-4 md:w-auto">
+      <div className="flex flex-col gap-4 w-full md:w-auto">
         <div className="flex justify-center items-center w-16 h-16 rounded-full bg-purple-900/30 border border-purple-500/50 shrink-0">
           <TrophyIcon className="h-8 w-8 text-purple-500" />
         </div>
         
         {imageUrl && (
-          <div className="w-full md:w-64 h-48 relative rounded-lg overflow-hidden bg-black/50">
+          <div className="w-full h-52 md:w-64 md:h-48 relative rounded-lg overflow-hidden bg-black/50">
             <Image
               src={imageUrl}
               alt={`${title} image`}
@@ -57,7 +57,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
         )}
       </div>
       
-      <div className="flex-1">
+      <div className="flex-1 mt-4 md:mt-0">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
           <h3 className="text-xl font-bold text-white">{title}</h3>
           <p className="text-cyan-400 font-medium md:text-right">{date}</p>
@@ -378,7 +378,7 @@ const AchievementsPage = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-8 md:px-16 w-full z-[20]"
+      className="mt-40 mb-20 px-4 sm:px-8 md:px-16 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
@@ -387,7 +387,7 @@ const AchievementsPage = () => {
         animate="visible"
         className="flex flex-col items-center justify-center text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
+        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
           Achievements & Accolades
         </h2>
         <p className="text-gray-400 text-center max-w-[700px] mb-8">
@@ -407,7 +407,7 @@ const AchievementsPage = () => {
             />
           </div>
           
-          <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 md:flex-nowrap">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2 md:pb-0 md:flex-nowrap">
             <button
               onClick={() => setSelectedFilter("all")}
               className={`px-4 py-2 rounded-lg transition-all whitespace-nowrap ${

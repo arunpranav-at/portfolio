@@ -332,6 +332,7 @@ const ChennaiRiversArticle = () => {
               </div>
               <div>
                 <div className="font-bold text-lg">Arun Pranav A T</div>
+                <div className="text-gray-400">Author &bull; Chennai Institute of Technology</div>
               </div>
             </div>
           </motion.div>

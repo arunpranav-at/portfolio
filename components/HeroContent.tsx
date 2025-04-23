@@ -29,7 +29,7 @@ const HeroContent = () => {
             className="flex items-center text-blue-500 hover:text-blue-400 transition duration-200 text-sm"
           >
             <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
-            <span className="Welcome-text underline">Support Me</span>
+            <span className="Welcome-text underline font-bold">Support Me</span>
           </a>
         </motion.div>
 
