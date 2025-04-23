@@ -8,6 +8,8 @@ import {
   slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import { RxLinkedinLogo, RxInstagramLogo, RxGithubLogo } from "react-icons/rx";
+import { HiOutlineMail } from "react-icons/hi";
 import Image from "next/image";
 
 const HeroContent = () => {
@@ -52,15 +54,65 @@ const HeroContent = () => {
         >
           Humble, optimistic ambivert weaving code with care and collaboration.
         </motion.p>
-        <motion.a
-          href="https://flowcv.com/resume/jbipw77gh3"
-          variants={slideInFromLeft(1)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[100px]"
-        >
-          Resume
-        </motion.a>
+        
+        <div className="flex flex-col gap-4">
+          <motion.a
+            href="https://flowcv.com/resume/jbipw77gh3"
+            variants={slideInFromLeft(1)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[100px]"
+          >
+            Resume
+          </motion.a>
+          
+          <motion.div
+            variants={slideInFromLeft(1.2)}
+            className="flex flex-wrap gap-4 md:gap-6 mt-2"
+          >
+            <a
+              href="https://www.linkedin.com/in/arunpranavat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors text-gray-300"
+              aria-label="LinkedIn"
+            >
+              <RxLinkedinLogo size={18} />
+              <span className="hidden sm:inline">LinkedIn</span>
+            </a>
+            
+            <a
+              href="https://www.instagram.com/arunpranavat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-pink-400 transition-colors text-gray-300"
+              aria-label="Instagram"
+            >
+              <RxInstagramLogo size={18} />
+              <span className="hidden sm:inline">Instagram</span>
+            </a>
+            
+            <a
+              href="mailto:pranav9176@gmail.com"
+              className="flex items-center gap-2 hover:text-green-400 transition-colors text-gray-300"
+              aria-label="Email"
+            >
+              <HiOutlineMail size={18} />
+              <span className="hidden sm:inline">Email</span>
+            </a>
+            
+            <a
+              href="https://www.github.com/arunpranav-at"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-purple-400 transition-colors text-gray-300"
+              aria-label="GitHub"
+            >
+              <RxGithubLogo size={18} />
+              <span className="hidden sm:inline">GitHub</span>
+            </a>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
