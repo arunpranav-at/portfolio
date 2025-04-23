@@ -82,7 +82,7 @@ const ChennaiRiversArticle = () => {
             
             <motion.div variants={slideUp} className="max-w-3xl mx-auto">
               <p className="text-xl md:text-2xl text-gray-300 mb-8">
-                A historical perspective of Chennai's rivers and an urgent call to action.
+                A historical perspective of Chennai&apos;s rivers and an urgent call to action.
               </p>
               
               <div className="flex justify-center space-x-6">
@@ -216,12 +216,12 @@ const ChennaiRiversArticle = () => {
             </h2>
             
             <p className="text-cyan-300 mb-12 text-lg italic">
-              "The earth, the air, the land and the water are not an inheritance from our fore fathers but on loan from our children. So we have to hand over to them at least as it has been handed over to us." - Mahatma Gandhi
+              &quot;The earth, the air, the land and the water are not an inheritance from our fore fathers but on loan from our children. So we have to hand over to them at least as it has been handed over to us.&quot; - Mahatma Gandhi
             </p>
             
             <div className="prose prose-xl prose-invert max-w-none">
               <p className="text-xl leading-relaxed mb-8">
-                We used to say that the city of Delhi is situated on the banks of river Yamuna. The city of Kolkata is situated on the banks of river Hoogly. Mysuru on Kaveri, Varanasi on Ganga, Madurai on Vaigai and so on. What would you say when you are questioned, "On which river bank, the city of Chennai is located?" Then we all won't answer in a same way. It is because; Chennai is situated on the banks of three rivers – Coovam river, Adyar river, and Kosasthalai river. To say in simpler words, we can answer it as "Chennai is situated on the banks of three sewers". Yes the condition of those rivers is so bad.
+                We used to say that the city of Delhi is situated on the banks of river Yamuna. The city of Kolkata is situated on the banks of river Hoogly. Mysuru on Kaveri, Varanasi on Ganga, Madurai on Vaigai and so on. What would you say when you are questioned, &quot;On which river bank, the city of Chennai is located?&quot; Then we all won&apos;t answer in a same way. It is because; Chennai is situated on the banks of three rivers &ndash; Coovam river, Adyar river, and Kosasthalai river. To say in simpler words, we can answer it as &quot;Chennai is situated on the banks of three sewers&quot;. Yes the condition of those rivers is so bad.
               </p>
               
               <p className="text-xl leading-relaxed mb-8">
@@ -241,7 +241,7 @@ const ChennaiRiversArticle = () => {
               </div>
               
               <p className="text-xl leading-relaxed mb-8">
-                In April 2020, we saw an incident - lot of toxic bubbles araised in the Marina Beach which is the second longest beach in the world and the fame of Chennai. Then the researchers found that it was due to the sudden release of high amount of toxic chemicals released by the industries in Adyar river. But then, the media didn't give attention towards this issue and no actions were taken.
+                In April 2020, we saw an incident - lot of toxic bubbles araised in the Marina Beach which is the second longest beach in the world and the fame of Chennai. Then the researchers found that it was due to the sudden release of high amount of toxic chemicals released by the industries in Adyar river. But then, the media didn&apos;t give attention towards this issue and no actions were taken.
               </p>
               
               <p className="text-xl leading-relaxed mb-8">
@@ -249,7 +249,7 @@ const ChennaiRiversArticle = () => {
               </p>
               
               <div className="mb-12 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 p-6 rounded-xl border border-cyan-500/20">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-300">The Cultural & Historical Significance</h3>
+                <h3 className="text-2xl font-bold mb-4 text-cyan-300">The Cultural &amp; Historical Significance</h3>
                 <p className="text-gray-300 mb-4">
                   The readers must pay attention to the upcoming paragraph. The Kasi Viswanath Temple is closely related with river Ganga. The Madurai Kal Alaghar Temple is closely realted with river Vaigai. Similarly ancient temples like Thiruverkadu Shiva Temple, Koyambedu Shiva Temple, and Veerabathraswami Temple are closely related with river Coovam.
                 </p>
@@ -263,22 +263,22 @@ const ChennaiRiversArticle = () => {
               </p>
               
               <div className="bg-gradient-to-r from-cyan-900/20 to-cyan-800/20 p-6 rounded-xl border border-cyan-500/20 mb-12">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">A British Poet's Perspective</h3>
+                <h3 className="text-2xl font-bold mb-4 text-cyan-400">A British Poet&apos;s Perspective</h3>
                 <p className="text-gray-300 italic mb-2">The British poet V.H. Shipley describes the Coovam river in 1928 as follows:</p>
                 <blockquote className="pl-4 border-l-4 border-cyan-500 italic text-cyan-200">
-                  "Of dirt and smell your sources awake…<br/>
+                  &quot;Of dirt and smell your sources awake&hellip;<br/>
                   And near the sea where one would think it forms a cesspit,<br/>
                   Was cleaner by the bridge, adjoining Marina.<br/>
                   Oh sterile stream!<br/>
                   Oh fragrant flood<br/>
-                  Oh green and enticing river!"
+                  Oh green and enticing river!&quot;
                 </blockquote>
               </div>
 
               <div className="flex justify-center my-10">
                 <div className="inline-flex items-center justify-center space-x-4">
                   <div className="w-24 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
-                  <span className="text-cyan-400 font-bold">Then & Now</span>
+                  <span className="text-cyan-400 font-bold">Then &amp; Now</span>
                   <div className="w-24 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
                 </div>
               </div>

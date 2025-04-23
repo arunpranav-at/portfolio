@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 
@@ -152,9 +153,10 @@ const VolunteerPage = () => {
                 <div className="md:w-1/3 relative">
                   <div className="pb-[75%] md:pb-0 md:h-full"> {/* 4:3 aspect ratio (75%) */}
                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-60 z-10"></div>
-                    <img 
+                    <Image
                       src={experience.image} 
                       alt={experience.organization} 
+                      fill
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>

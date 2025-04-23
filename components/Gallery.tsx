@@ -46,7 +46,7 @@ const GalleryPage = () => {
     }));
     
     setFilteredItems(items);
-  }, []); // Empty dependency array as this should only run once
+  }, [shuffleArray]);
 
   // Animation variants
   const containerVariants = {

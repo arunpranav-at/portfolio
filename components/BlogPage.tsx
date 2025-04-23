@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { FiSearch } from "react-icons/fi";
@@ -16,44 +17,40 @@ export interface BlogPost {
   slug: string;
 }
 
+// Blog data moved outside the component to prevent re-creation on each render
+const blogs: BlogPost[] = [
+  {
+    id: 1,
+    title: "Worldly Treason",
+    description: "The story of a scientist who lost his grand-daughter in a future dystopian world",
+    image: "/blog-images/worldlytreason.jpeg",
+    date: "April 15, 2024",
+    readTime: "5 min read",
+    slug: "worldlytreason"
+  },
+  {
+    id: 2,
+    title: "The City of Three Rivers",
+    description: "An article about the concerning condition of the rivers in the city of Chennai",
+    image: "/blog-images/thecityofthreerivers.jpeg",
+    date: "August 24, 2023",
+    readTime: "5 min read",
+    slug: "thecityofthreerivers"
+  },
+];
+
 const BlogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [filteredBlogs, setFilteredBlogs] = useState<BlogPost[]>([]);
+  const [filteredBlogs, setFilteredBlogs] = useState<BlogPost[]>(blogs); // Initialize with blogs
   
-  const blogs: BlogPost[] = [
-    {
-        id: 1,
-        title: "Worldly Treason",
-        description: "The story of a scientist who lost his grand-daughter in a future dystopian world",
-        image: "/blog-images/worldlytreason.jpeg",
-        date: "April 15, 2024",
-        readTime: "5 min read",
-        slug: "worldlytreason"
-    },
-    {
-        id: 2,
-        title: "The City of Three Rivers",
-        description: "An article about the concerning condition of the rivers in the city of Chennai",
-        image: "/blog-images/thecityofthreerivers.jpeg",
-        date: "August 24, 2023",
-        readTime: "5 min read",
-        slug: "thecityofthreerivers"
-      },
-  ];
-
-  // Filter blogs based on search term
+  // Filter blogs based on search term - only depends on searchTerm now
   useEffect(() => {
     const results = blogs.filter(blog =>
       blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       blog.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredBlogs(results);
-  }, [searchTerm]);
-
-  // Initialize filtered blogs with all blogs
-  useEffect(() => {
-    setFilteredBlogs(blogs);
-  }, []);
+  }, [searchTerm]); // Removed blogs dependency
 
   // Open blog in new tab when clicked
   const handleBlogClick = (slug: string): void => {
@@ -123,7 +120,7 @@ const BlogPage: React.FC = () => {
           </div>
           {searchTerm && (
             <p className="text-gray-400 mt-2 text-center">
-              {filteredBlogs.length} {filteredBlogs.length === 1 ? 'result' : 'results'} found for "{searchTerm}"
+              {filteredBlogs.length} {filteredBlogs.length === 1 ? 'result' : 'results'} found for {searchTerm}
             </p>
           )}
         </motion.div>
@@ -148,25 +145,16 @@ const BlogPage: React.FC = () => {
                     <div className="relative aspect-square overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
                     <div className="h-full w-full group-hover:scale-105 transition-transform duration-500">
-                        {/* Gradient fallback is now only shown when image fails to load */}
-                        <img 
+                      <Image
                         src={blog.image}
                         alt={blog.title}
                         className="h-full w-full object-cover object-center"
-                        onError={(e) => {
-                            // If the image fails to load, show the gradient fallback
-                            e.currentTarget.onerror = null;
-                            e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23252A37'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='18' fill='%238B5CF6'%3ETailwind CSS Blog%3C/text%3E%3C/svg%3E";
-                            
-                            // Add gradient overlay when image fails
-                            const parent = e.currentTarget.parentElement;
-                            if (parent) {
-                            const gradientDiv = document.createElement('div');
-                            gradientDiv.className = 'absolute inset-0 bg-gradient-to-br from-purple-700 to-blue-600 opacity-80';
-                            parent.prepend(gradientDiv);
-                            }
+                        width={400}
+                        height={400}
+                        onError={() => {
+                          console.error("Image failed to load");
                         }}
-                        />
+                      />
                     </div>
                     </div>
                 </div>
@@ -215,7 +203,7 @@ const BlogPage: React.FC = () => {
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">No results found</h3>
             <p className="text-gray-400 max-w-md mx-auto">
-              We couldn't find any articles matching your search. Try different keywords or browse all articles.
+              We could not find any articles matching your search. Try different keywords or browse all articles.
             </p>
             <button 
               onClick={() => setSearchTerm("")}
