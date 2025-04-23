@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
       custom={delay}
       initial="hidden"
       animate="visible"
-      className="w-full md:w-[300px] h-[350px] p-4 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col items-center justify-start gap-2 hover:border-[#7042f8] transition-all duration-300"
+      className="w-full md:w-[300px] h-[350px] p-4 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col items-center justify-start gap-2 transition-all duration-300"
     >
       <div className="w-full flex justify-center">
         {icon}

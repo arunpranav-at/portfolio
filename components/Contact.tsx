@@ -156,14 +156,16 @@ const ContactPage = () => {
                 <p className="text-gray-300 mb-4">
                   You can send me an email at the address below:
                 </p>
-                <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-4 flex items-center justify-between">
-                  <span className="text-purple-300 font-mono">pranav9176@gmail.com</span>
+                <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-4 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
+                  <span className="text-purple-300 font-mono text-center sm:text-left break-all">
+                    pranav9176@gmail.com
+                  </span>
                   <button 
                     onClick={() => {
                       navigator.clipboard.writeText("pranav9176@gmail.com");
                       alert("Email copied to clipboard!");
                     }}
-                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm transition-colors duration-300"
+                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm transition-colors duration-300 w-full sm:w-auto"
                   >
                     Copy
                   </button>

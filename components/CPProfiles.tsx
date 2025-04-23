@@ -46,8 +46,8 @@ const CPProfilesPage = () => {
       platform: "CodeChef",
       username: "arunpranavat",
       title: "Three Stars (Div 2)",
-      ranking: "",
-      solved: "",
+      ranking: "381 (Contest Best)",
+      solved: "150+",
       maxRating: 1697,
       additionalStats: [
         { icon: <TrophyIcon className="h-5 w-5" />, label: "Best Contest Rank", value: "386" }
@@ -62,8 +62,8 @@ const CPProfilesPage = () => {
       platform: "Codeforces",
       username: "pranav9176",
       title: "Pupil",
-      ranking: "",
-      solved: "",
+      ranking: "2781 (Contest Best)",
+      solved: "50+",
       maxRating: 1279,
       additionalStats: [
         { icon: <TrophyIcon className="h-5 w-5" />, label: "Best Contest Rank", value: "2781" }
@@ -193,11 +193,18 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                     </div>
                     
                     {/* Platform Name */}
-                    <div className="absolute bottom-4 left-6">
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 p-2 rounded-lg text-center">
+                      <a 
+                      href={profile.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block"
+                      >
                       <h3 className="text-2xl font-bold text-white">
                         {profile.platform}
                       </h3>
                       <p className="text-sm text-white/80">@{profile.username}</p>
+                      </a>
                     </div>
                   </div>
                   
