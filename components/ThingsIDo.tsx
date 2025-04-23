@@ -25,7 +25,7 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay }) => {
   return (
     <motion.div
-      variants={slideInFromTop}
+      variants={slideInFromTop(0)}
       custom={delay}
       initial="hidden"
       animate="visible"
@@ -48,7 +48,7 @@ const ThingsIDo = () => {
       className="mt-40 mb-20 px-10 md:px-20 w-full z-[20]"
     >
       <motion.div
-        variants={slideInFromTop}
+        variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"

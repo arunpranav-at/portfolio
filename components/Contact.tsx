@@ -89,7 +89,7 @@ const ContactPage = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={slideInFromTop}
+          variants={slideInFromTop(0)}
           className="flex flex-col items-center justify-center text-center mb-16"
         >
           <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
@@ -104,7 +104,7 @@ const ContactPage = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={slideInFromTop}
+          variants={slideInFromTop(0)}
           className="grid grid-cols-1 gap-8 mb-16"
         >
           {contactMethods.map((method) => (

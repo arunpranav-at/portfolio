@@ -120,7 +120,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
       className="mt-40 mb-20 px-8 md:px-16 w-full z-[20]"
     >
       <motion.div
-        variants={slideInFromTop}
+        variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"
@@ -269,7 +269,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
         
         {/* Visual Stats Section */}
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop(0)}
           custom={0.8}
           initial="hidden"
           animate="visible"

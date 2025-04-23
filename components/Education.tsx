@@ -28,7 +28,7 @@ const EducationCard: React.FC<EducationCardProps> = ({
 }) => {
   return (
     <motion.div
-      variants={slideInFromTop}
+      variants={slideInFromTop(0)}
       custom={delay}
       initial="hidden"
       animate="visible"
@@ -76,7 +76,7 @@ const EducationComponent = () => {
       className="mt-40 mb-20 px-4 md:px-8 lg:px-12 w-full z-[20]"
     >
       <motion.div
-        variants={slideInFromTop}
+        variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"

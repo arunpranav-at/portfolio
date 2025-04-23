@@ -119,7 +119,7 @@ const VolunteerPage = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={slideInFromTop}
+          variants={slideInFromTop(0)}
           className="flex flex-col items-center justify-center text-center mb-16"
         >
           <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 mb-4">

@@ -19,7 +19,7 @@ const HeroContent = () => {
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop(0)}
           className="Welcome-box flex items-center gap-2 py-2 px-3 border border-[#7042f88b] opacity-90 rounded-md shadow-sm bg-white/10 backdrop-blur"
         >
           <a
