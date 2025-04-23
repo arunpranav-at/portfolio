@@ -26,7 +26,7 @@ const GalleryPage = () => {
 
   const originalGalleryItems: GalleryItem[] = [];
 
-  for (let i = 1; i <= 46; i++) {
+  for (let i = 1; i <= 39; i++) {
     originalGalleryItems.push({
       id: i,
       image: `/gallery/${i}.jpeg`
