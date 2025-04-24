@@ -104,62 +104,6 @@ const Projects = () => {
           achievements={["Submitted for Google Solutions Challenge 2025", "Developed within a time period of one week", "This project leverages several Google technologies to enhance functionality and development like Google Gemini AI, Google IDX, etc."]}
           githubUrl="https://github.com/arunpranav-at/GTCD"
         />
-        <ProjectCard
-          src="/projectscreenshots/querygenie.png"
-          title="QueryGenie"
-          description="QueryGenie : An advanced tool which converts Natural Language Prompts to SQL queries and manages the usage based on token counts and cost incurred along with detailed analytics. Executive Challenge - Chat with your data token utilization and cost monitoring challenge"
-          techStack={["PostgreSQL", "Python", "OpenAI", "Streamlit"]}
-          achievements={["Submitted to Microsoft Innovation Challenge October Edition 2024", "Used Azure products extensively to build this project"]}
-          githubUrl="https://github.com/arunpranav-at/QueryGenie"
-        />
-        <ProjectCard
-          src="/projectscreenshots/avvaiaichatbot.png"
-          title="Avvai AI Voice Bot"
-          description="The Voice Assistant Program is a Python application that utilizes the OpenAI API, speech recognition, and text-to-speech capabilities to create a simple voice-controlled assistant. This program allows you to have a text-based conversation with an AI assistant using voice input and output. The assistant can respond to your voice commands, answer questions, and engage in natural language conversations."
-          techStack={["speech_recognition", "pyttsx3", "tkinter"]}
-          achievements={["Top 7 among 200+ participants in the CIT intracollege hackathon 2023"]}
-          githubUrl="https://github.com/arunpranav-at/avvaiaiintegratedvoicebot"
-        />
-        <ProjectCard
-          src="/projectscreenshots/firedetection.png"
-          title="Fire Prevention with Arduino"
-          description="The Arduino-based Smoke Identification Device project represents a significant achievement in the realm of fire safety and smoke detection technology. By leveraging the power of Arduino microcontrollers and specialized sensors, we have developed a reliable and cost-effective solution for early smoke detection."
-          techStack={["Arduino C", "Smoke Sensor MQ2", "Buzzer", "LCD Display"]}
-          achievements={["100% detection rate in lab tests", "Submitted to the Embedded Programming Practical Project at CIT"]}
-          githubUrl="https://github.com/arunpranav-at/smoke-detection-and-fire-prevention-using-arduino"
-        />
-        <ProjectCard
-          src="/projectscreenshots/spocal.png"
-          title="Spocal Quiz Assistant"
-          description="Speech recognition quiz software. This will first get user details in form of voice, display questions and get answers in form of voice, analyse it and check the correctness, finally it displays the score. This was done during my first semester when I was new to programming. This taught me basics of object oriented programming and GUI development."
-          techStack={["Python", "SpeechRecognition", "Tkinter"]}
-          achievements={["Top project in CIT-COS (Carnival of Science) for the year of 2023", "Developed in a span of 2 days"]}
-          githubUrl="https://github.com/arunpranav-at/SpocalQuizAssistantUsingVoice"
-        />
-        <ProjectCard
-          src="/projectscreenshots/psoc.png"
-          title="PSoC"
-          description="PSoC (Platform for Season of Commits) is a simplified libre platform, primarily designed for managing and organizing FOSS contribution programs such as Season of Commits by FOSS United, enabling seamless interaction between organizations and contributors, fostering FOSS contributions and growth of community."
-          techStack={["Frappe framework", "Vue.js", "Frappe UI", "TailwindCSS"]}
-          achievements={["Submitted to FOSSHack Hackathon 2025", "Used Frappe framework extensively to build this project"]}
-          githubUrl="https://github.com/arunpranav-at/psoc"
-        />
-        <ProjectCard
-          src="/projectscreenshots/storyforge.png"
-          title="StoryForge"
-          description="StoryForge is a client-side desktop application that leverages Intel® AI PC's cutting-edge architecture and technologies which works offline to support novelists and writers by helping them with: Analyzing the story for tone, emotion, structure, genres, etc.,"
-          techStack={["Next.js", "Rust", "TailwindCSS", "FastAPI", "Intel® OpenVINO™ Toolkit"]}
-          achievements={["Submitted to Intel® AI PC Hackathon 2024", "Used Intel® OpenVINO™ Toolkit extensively to build this project"]}
-          githubUrl="https://github.com/arunpranav-at/storyforge"
-        />
-        <ProjectCard
-          src="/projectscreenshots/tailbitesnakegame.png"
-          title="Tail Bite Snake Game"
-          description="It is a small python based nokia style snake game made with the help of pygame module. It is made in order to bring in nostalgic memory of childhood period of playing nokia games."
-          techStack={["Pygame", "Python"]}
-          achievements={["Done when I was in 11th standard back in my school days"]}  
-          githubUrl="https://github.com/arunpranav-at/The-Tail-Bite-Snakegame"
-        />
       </div>
     </div>
   );

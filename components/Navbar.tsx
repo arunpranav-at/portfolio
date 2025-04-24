@@ -19,8 +19,6 @@ const Navbar = () => {
     { href: "/achievements", text: "Achievements" },
     { href: "/education", text: "Education" },
     { href: "/cpprofiles", text: "CP Profiles" },
-    { href: "/volunteering", text: "Volunteering" },
-    { href: "/certifications", text: "Certifications" },
     { href: "/blogs", text: "Blogs" },
     {
       href: "https://www.buymeacoffee.com/arunpranavat",
