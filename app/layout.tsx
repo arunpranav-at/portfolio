@@ -19,14 +19,6 @@ export const metadata: Metadata = {
     description: "Explore the personal portfolio of Arun Pranav A T - showcasing projects, skills, and my journey in tech.",
     url: "https://arunpranavat.vercel.app",
     siteName: "Arun Pranav A T",
-    images: [
-      {
-        url: "/og-banner.png",
-        width: 1200,
-        height: 630,
-        alt: "Arun Pranav A T - Software Engineer Portfolio",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
