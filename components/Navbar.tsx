@@ -13,9 +13,9 @@ const Navbar = () => {
 
   const links = [
     { href: "/", text: "About me" },
-    { href: "/skills", text: "Skills" },
     { href: "/projects", text: "Projects" },
     { href: "/experience", text: "Experience" },
+    { href: "/skills", text: "Skills" },
     { href: "/achievements", text: "Achievements" },
     { href: "/education", text: "Education" },
     { href: "/cpprofiles", text: "CP Profiles" },
@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Mobile menu button (hidden on desktop) */}
         <button
           onClick={toggleMenu}
-          className="sm:hidden text-gray-200 focus:outline-none"
+          className="sm:hidden text-gray-200 focus:outline-none p-2 rounded-md hover:bg-[#2A0E61]/30 transition-colors"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? (
@@ -62,7 +62,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="cursor-pointer whitespace-nowrap px-1 text-gray-200" // Removed hover effect
+                className="cursor-pointer whitespace-nowrap px-1 text-gray-200"
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
               >
@@ -73,15 +73,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Updated with darker background */}
       {isMenuOpen && (
-        <div className="sm:hidden absolute top-[50px] left-0 right-0 bg-[#0300145e] shadow-lg overflow-y-auto max-h-[calc(100vh-50px)]">
+        <div className="sm:hidden absolute top-[50px] left-0 right-0 bg-[#030014cc] shadow-lg overflow-y-auto max-h-[calc(100vh-50px)]">
           <div className="flex flex-col space-y-2 px-4 py-2">
             {links.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="block px-4 py-2 rounded-md text-gray-200" // Removed hover effect
+                className="block px-4 py-2 rounded-md text-gray-200"
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 onClick={() => setIsMenuOpen(false)}

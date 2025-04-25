@@ -117,16 +117,16 @@ const renderStars = (maxRating: number): JSX.Element[] => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-8 md:px-16 w-full z-[20]"
+      className="mt-20 md:mt-40 mb-16 md:mb-20 px-4 md:px-16 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center justify-center text-center mb-20"
+        className="flex flex-col items-center justify-center text-center mb-12 md:mb-20"
       >
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
+        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
           Competitive Programming Profiles
         </h2>
         <p className="text-gray-400 text-center max-w-[700px]">
@@ -138,13 +138,13 @@ const renderStars = (maxRating: number): JSX.Element[] => {
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Cosmic Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute h-64 w-64 rounded-full bg-purple-600/20 blur-3xl top-20 -left-32"></div>
-          <div className="absolute h-64 w-64 rounded-full bg-blue-600/20 blur-3xl bottom-10 right-10"></div>
-          <div className="absolute h-64 w-64 rounded-full bg-cyan-600/20 blur-3xl top-40 right-0"></div>
+          <div className="absolute h-40 md:h-64 w-40 md:w-64 rounded-full bg-purple-600/20 blur-3xl top-20 -left-16 md:-left-32"></div>
+          <div className="absolute h-40 md:h-64 w-40 md:w-64 rounded-full bg-blue-600/20 blur-3xl bottom-10 right-0 md:right-10"></div>
+          <div className="absolute h-40 md:h-64 w-40 md:w-64 rounded-full bg-cyan-600/20 blur-3xl top-40 right-0"></div>
         </div>
         
         {/* Connected Profiles Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
           {/* Connection Lines (visible on desktop) */}
           <div className="hidden lg:block absolute inset-0 z-0">
             <svg className="w-full h-full" viewBox="0 0 1000 400">
@@ -180,7 +180,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
               >
                 <div className="h-full rounded-2xl bg-black/40 backdrop-blur-md border border-[#7042f81f] overflow-hidden hover:border-[#7042f8] transition-all duration-300 group">
                   {/* Hexagonal Top Shape */}
-                  <div className="relative h-32">
+                  <div className="relative h-28 md:h-32">
                     <div 
                       className={`absolute inset-0 bg-gradient-to-r ${profile.color} clip-hexagon`}
                     ></div>
@@ -189,7 +189,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                     
                     {/* Platform Logo */}
                     <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full p-2">
-                      <CodeBracketIcon className="h-6 w-6 text-white" />
+                      <CodeBracketIcon className="h-5 md:h-6 w-5 md:w-6 text-white" />
                     </div>
                     
                     {/* Platform Name */}
@@ -200,7 +200,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                       rel="noopener noreferrer"
                       className="block"
                       >
-                      <h3 className="text-2xl font-bold text-white">
+                      <h3 className="text-xl md:text-2xl font-bold text-white">
                         {profile.platform}
                       </h3>
                       <p className="text-sm text-white/80">@{profile.username}</p>
@@ -209,17 +209,17 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                   </div>
                   
                   {/* Content Section */}
-                  <div className="p-6">
+                  <div className="p-4 md:p-6">
                     {/* Title & Rating */}
-                    <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center justify-between mb-4 md:mb-5">
                       <div className="flex flex-col">
                         <div className="flex items-center gap-2">
-                          <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+                          <span className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
                             {profile.title}
                           </span>
                         </div>
                         {profile.ranking && (
-                          <span className="text-gray-400 text-sm">{profile.ranking}</span>
+                          <span className="text-xs md:text-sm text-gray-400">{profile.ranking}</span>
                         )}
                       </div>
                       
@@ -229,25 +229,25 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                     </div>
                     
                     {/* Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
                       {profile.solved && (
-                        <div className="bg-[#7042f81f] rounded-lg p-3 flex flex-col items-center justify-center">
-                          <p className="text-sm text-gray-400">Problems Solved</p>
-                          <p className="text-lg font-bold text-white">{profile.solved}</p>
+                        <div className="bg-[#7042f81f] rounded-lg p-2 md:p-3 flex flex-col items-center justify-center">
+                          <p className="text-xs md:text-sm text-gray-400">Problems Solved</p>
+                          <p className="text-base md:text-lg font-bold text-white">{profile.solved}</p>
                         </div>
                       )}
                       
-                      <div className="bg-[#7042f81f] rounded-lg p-3 flex flex-col items-center justify-center">
-                        <p className="text-sm text-gray-400">Max Rating</p>
-                        <p className="text-lg font-bold text-white">{profile.maxRating}</p>
+                      <div className="bg-[#7042f81f] rounded-lg p-2 md:p-3 flex flex-col items-center justify-center">
+                        <p className="text-xs md:text-sm text-gray-400">Max Rating</p>
+                        <p className="text-base md:text-lg font-bold text-white">{profile.maxRating}</p>
                       </div>
                       
                       {profile.additionalStats.map((stat, idx) => (
-                        <div key={idx} className="bg-[#7042f81f] rounded-lg p-3 flex flex-col items-center justify-center">
-                          <p className="text-sm text-gray-400">{stat.label}</p>
+                        <div key={idx} className="bg-[#7042f81f] rounded-lg p-2 md:p-3 flex flex-col items-center justify-center">
+                          <p className="text-xs md:text-sm text-gray-400">{stat.label}</p>
                           <div className="flex items-center gap-1">
-                            <span className="text-purple-400">{React.cloneElement(stat.icon, { className: 'h-4 w-4 text-purple-400' })}</span>
-                            <p className="text-lg font-bold text-white">{stat.value}</p>
+                            <span className="text-purple-400">{React.cloneElement(stat.icon, { className: 'h-4 w-4 md:h-4 md:w-4 text-purple-400' })}</span>
+                            <p className="text-base md:text-lg font-bold text-white">{stat.value}</p>
                           </div>
                         </div>
                       ))}
@@ -258,7 +258,7 @@ const renderStars = (maxRating: number): JSX.Element[] => {
                       href={profile.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block w-full py-3 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-medium text-center transition-all duration-300"
+                      className="block w-full py-2 md:py-3 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white text-sm md:text-base font-medium text-center transition-all duration-300"
                     >
                       View Profile
                     </a>
@@ -280,37 +280,37 @@ const renderStars = (maxRating: number): JSX.Element[] => {
           custom={0.8}
           initial="hidden"
           animate="visible"
-          className="mt-20 bg-black/30 backdrop-blur-md border border-[#7042f81f] rounded-xl p-8 relative overflow-hidden"
+          className="mt-12 md:mt-20 bg-black/30 backdrop-blur-md border border-[#7042f81f] rounded-xl p-6 md:p-8 relative overflow-hidden"
         >
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-600/10 blur-3xl"></div>
           
-          <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-6">
+          <h3 className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-6">
             My CP Journey
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex flex-col items-center p-4 bg-black/40 rounded-lg border border-purple-500/20">
-              <div className="h-16 w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
-                <CodeBracketIcon className="h-8 w-8 text-purple-400" />
+              <div className="h-14 md:h-16 w-14 md:w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
+                <CodeBracketIcon className="h-7 md:h-8 w-7 md:w-8 text-purple-400" />
               </div>
-              <p className="text-4xl font-bold text-white">1200+</p>
-              <p className="text-gray-400">Total Number of Problems Solved</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">1200+</p>
+              <p className="text-sm md:text-base text-gray-400 text-center">Total Number of Problems Solved</p>
             </div>
             
             <div className="flex flex-col items-center p-4 bg-black/40 rounded-lg border border-purple-500/20">
-              <div className="h-16 w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
-                <FireIcon className="h-8 w-8 text-purple-400" />
+              <div className="h-14 md:h-16 w-14 md:w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
+                <FireIcon className="h-7 md:h-8 w-7 md:w-8 text-purple-400" />
               </div>
-              <p className="text-4xl font-bold text-white">{activeDays}</p>
-              <p className="text-gray-400">Active Number of Days</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">{activeDays}</p>
+              <p className="text-sm md:text-base text-gray-400 text-center">Active Number of Days</p>
             </div>
             
             <div className="flex flex-col items-center p-4 bg-black/40 rounded-lg border border-purple-500/20">
-              <div className="h-16 w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
-                <TrophyIcon className="h-8 w-8 text-purple-400" />
+              <div className="h-14 md:h-16 w-14 md:w-16 rounded-full bg-purple-900/30 border border-purple-500/50 flex items-center justify-center mb-4">
+                <TrophyIcon className="h-7 md:h-8 w-7 md:w-8 text-purple-400" />
               </div>
-              <p className="text-4xl font-bold text-white">2025 (Leetcode)</p>
-              <p className="text-gray-400">Highest Ratings</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">2025 (Leetcode)</p>
+              <p className="text-sm md:text-base text-gray-400 text-center">Highest Ratings</p>
             </div>
           </div>
         </motion.div>

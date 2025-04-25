@@ -32,34 +32,34 @@ const EducationCard: React.FC<EducationCardProps> = ({
       custom={delay}
       initial="hidden"
       animate="visible"
-      className="w-full md:w-[1000px] lg:w-[1200px] p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col gap-2 hover:border-[#7042f8] transition-all duration-300 cosmic-glow"
+      className="w-full p-4 sm:p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col gap-2 hover:border-[#7042f8] transition-all duration-300 cosmic-glow"
     >
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-        <div className="flex items-center gap-3">
-          <AcademicCapIcon className="h-8 w-8 text-purple-500" />
+      <div className="flex flex-col gap-2">
+        <div className="flex items-start gap-3">
+          <AcademicCapIcon className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500 mt-1 flex-shrink-0" />
           <div>
-            <h3 className="text-xl font-bold text-white">{degree}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">{degree}</h3>
             <a 
               href={institutionUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 hover:underline"
+              className="text-base sm:text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 hover:underline"
             >
               {institution}
             </a>
           </div>
         </div>
-        <div className="text-right mt-2 md:mt-0">
-          <p className="text-gray-400">{duration}</p>
-          <p className="text-gray-400">{location}</p>
-          <p className="text-purple-400 font-medium">{grade}</p>
+        <div className="text-left sm:text-right mt-1">
+          <p className="text-sm sm:text-base text-gray-400">{duration}</p>
+          <p className="text-sm sm:text-base text-gray-400">{location}</p>
+          <p className="text-sm sm:text-base text-purple-400 font-medium">{grade}</p>
         </div>
       </div>
       
-      <ul className="mt-3 text-gray-300 space-y-1">
+      <ul className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-300 space-y-1">
         {description.map((point, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-purple-500 mr-2">•</span>
+            <span className="text-purple-500 mr-2 flex-shrink-0">•</span>
             <span>{point}</span>
           </li>
         ))}
@@ -73,26 +73,26 @@ const EducationComponent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-4 md:px-8 lg:px-12 w-full z-[20]"
+      className="mt-20 sm:mt-40 mb-10 sm:mb-20 px-4 sm:px-6 md:px-8 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center justify-center text-center mb-16"
+        className="flex flex-col items-center justify-center text-center mb-8 sm:mb-16"
       >
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
+        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3 sm:mb-4 space-title">
           Education
         </h2>
-        <p className="text-gray-400 text-center max-w-[900px]">
+        <p className="text-sm sm:text-base text-gray-400 text-center max-w-[900px]">
           My academic journey has equipped me with a strong foundation in technology and various other disciplines. Here is a look at my educational background:
         </p>
       </motion.div>
 
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-4 sm:gap-8 w-full max-w-4xl mx-auto">
         <EducationCard
-          institution="Chennai Institute of Technology"
+          institution="Chennai Institute of Technology, Anna University"
           degree="Bachelor of Technology - BTech, Information Technology"
           institutionUrl="https://www.citchennai.edu.in/"
           duration="Oct 2022 - Apr 2026"
@@ -109,7 +109,7 @@ const EducationComponent = () => {
         />
 
         <EducationCard
-          institution="The Hindu Colony Chellammal Vidyalaya"
+          institution="The Hindu Colony Chellammal Vidyalaya (CBSE)"
           degree="Class 12, Computer Science with Physics, Chemistry, Mathematics and English"
           institutionUrl="https://www.chellammalvidyalayaschool.org/"
           duration="2021 - 2022"
@@ -125,7 +125,7 @@ const EducationComponent = () => {
         />
 
         <EducationCard
-          institution="The Hindu Colony Chellammal Vidyalaya"
+          institution="The Hindu Colony Chellammal Vidyalaya (CBSE)"
           degree="Class 10, Science, Mathematics, Social Science, Information Technology, English, Tamil"
           institutionUrl="https://www.chellammalvidyalayaschool.org/"
           duration="2019 - 2020"
@@ -143,7 +143,7 @@ const EducationComponent = () => {
         <EducationCard
           institution="Dakshina Bharat Hindi Prachar Sabha"
           degree="Bachelor of Arts - BA (Rashtrabhasha Praveen), Hindi Language and Literature"
-          institutionUrl="https://www.dbhpscentral.org/"
+          institutionUrl="https://www.dbhpscentral.org/latindex"
           duration="2018"
           location="Chennai, India"
           grade="First Class"

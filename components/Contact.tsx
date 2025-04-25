@@ -100,43 +100,6 @@ const ContactPage = () => {
           </p>
         </motion.div>
 
-        {/* Contact Methods */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={slideInFromTop(0)}
-          className="grid grid-cols-1 gap-8 mb-16"
-        >
-          {contactMethods.map((method) => (
-            <div
-              key={method.id}
-              className="group"
-            >
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={slideInFromLeft(0.3)}
-                className="h-full rounded-2xl bg-black/40 backdrop-blur-md border border-[#7042f81f] overflow-hidden hover:border-[#7042f8] transition-all duration-300 p-6 flex flex-col items-center justify-center text-center relative"
-              >
-                {/* Animated Background Gradient */}
-                <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${method.color} opacity-10`}></div>
-                </div>
-                
-                {/* Icon Circle */}
-                <div className="h-20 w-20 rounded-full bg-black/50 border border-[#7042f81f] flex items-center justify-center mb-4 group-hover:border-purple-500 transition-all duration-300">
-                  {method.icon}
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
-                <p className="text-purple-300">{method.value}</p>
-                <p className="text-gray-400 mt-2">Please copy this email address and send your message directly from your preferred email client.</p>
-              </motion.div>
-            </div>
-          ))}
-        </motion.div>
-
         {/* Contact Info and Social Profiles Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}

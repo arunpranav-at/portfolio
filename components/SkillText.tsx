@@ -6,29 +6,27 @@ import { SparklesIcon } from '@heroicons/react/24/solid'
 
 const SkillText = () => {
   return (
-    <div className='w-full h-auto flex flex-col items-center justify-center mb-5'>
-      <motion.div
-        variants={slideInFromTop(0)}
-        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
-      >
-        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-        <h1 className="Welcome-text text-[13px]">
-          Professional Skill Set
-        </h1>
-      </motion.div>
-      <motion.div
-        variants={slideInFromLeft(0.5)}
-        className='text-[30px] md:text-[40px] text-white font-medium mt-[10px] text-center mb-[15px]'
-      >
-        Technical Expertise & Capabilities
-      </motion.div>
-      <motion.div
-        variants={slideInFromRight(0.5)}
-        className='text-[20px] text-gray-200 mb-10 mt-[10px] text-center max-w-3xl'
-      >
-        A comprehensive toolkit of programming languages, frameworks, and technologies
-      </motion.div>
-    </div>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="mt-20 sm:mt-20 mb-10 sm:mb-20 w-full z-[20]"
+    >
+      <div className="flex flex-col items-center justify-center text-center mb-8 sm:mb-16">
+        <motion.h2
+          variants={slideInFromLeft(0.5)}
+          className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3 sm:mb-4 space-title"
+        >
+          Technical Expertise
+        </motion.h2>
+        
+        <motion.p
+          variants={slideInFromRight(0.5)}
+          className="text-sm sm:text-base text-gray-400 text-center max-w-[700px] mx-auto"
+        >
+          A comprehensive toolkit of programming languages, frameworks, and technologies that I've mastered throughout my journey.
+        </motion.p>
+      </div>
+    </motion.div>
   )
 }
 

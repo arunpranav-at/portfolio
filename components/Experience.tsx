@@ -30,33 +30,33 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       custom={delay}
       initial="hidden"
       animate="visible"
-      className="w-full md:w-[800px] p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col gap-2 hover:border-[#7042f8] transition-all duration-300 cosmic-glow"
+      className="w-full p-4 sm:p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col gap-2 hover:border-[#7042f8] transition-all duration-300 cosmic-glow"
     >
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-        <div className="flex items-center gap-3">
-          <BriefcaseIcon className="h-8 w-8 text-purple-500" />
+      <div className="flex flex-col gap-2">
+        <div className="flex items-start gap-3">
+          <BriefcaseIcon className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500 mt-1 flex-shrink-0" />
           <div>
-            <h3 className="text-xl font-bold text-white">{title}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
             <a 
               href={companyUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 hover:underline"
+              className="text-base sm:text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 hover:underline"
             >
               {company}
             </a>
           </div>
         </div>
-        <div className="text-right mt-2 md:mt-0">
-          <p className="text-gray-400">{duration}</p>
-          <p className="text-gray-400">{location}</p>
+        <div className="text-left sm:text-right mt-1">
+          <p className="text-sm sm:text-base text-gray-400">{duration}</p>
+          <p className="text-sm sm:text-base text-gray-400">{location}</p>
         </div>
       </div>
       
-      <ul className="mt-3 text-gray-300 space-y-1">
+      <ul className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-300 space-y-1">
         {description.map((point, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-purple-500 mr-2">•</span>
+            <span className="text-purple-500 mr-2 flex-shrink-0">•</span>
             <span>{point}</span>
           </li>
         ))}
@@ -70,24 +70,24 @@ const ExperienceComponent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-10 md:px-20 w-full z-[20]"
+      className="mt-20 sm:mt-40 mb-10 sm:mb-20 px-4 sm:px-10 md:px-20 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center justify-center text-center mb-16"
+        className="flex flex-col items-center justify-center text-center mb-8 sm:mb-16"
       >
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
+        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3 sm:mb-4 space-title">
           Professional Experience
         </h2>
-        <p className="text-gray-400 text-center max-w-[700px]">
+        <p className="text-sm sm:text-base text-gray-400 text-center max-w-[700px]">
           I have had the opportunity to work with some amazing companies and teams, where I have gained valuable experience and skills. Here are some of my key experiences:
         </p>
       </motion.div>
 
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-4 sm:gap-8 w-full max-w-3xl mx-auto">
         <ExperienceCard
           title="Software Development Engineer Intern"
           company="Reverence Data Company"
@@ -144,7 +144,7 @@ const ExperienceComponent = () => {
           company="Impact CIT"
           companyUrl="https://www.linkedin.com/company/impact-studentcommunity/"
           duration="Dec 2022 - Dec 2023"
-          location="Chennai, Tamil Nadu, India · Hybrid"
+          location="Chennai, India"
           description={[
             "Created content utilizing skills in communication, problem solving, and analytical thinking",
             "Contributed to organizational communications using Microsoft Office and Google Workspace"

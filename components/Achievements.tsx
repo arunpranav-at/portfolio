@@ -32,15 +32,28 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       custom={delay}
       initial="hidden"
       animate="visible"
-      className="w-full md:w-[900px] p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col md:flex-row items-start gap-5 hover:border-[#7042f8] transition-all duration-300 cosmic-glow mx-auto"
+      className="w-full p-4 sm:p-6 bg-black/30 backdrop-blur-md rounded-lg border border-[#7042f81f] flex flex-col gap-4 hover:border-[#7042f8] transition-all duration-300 cosmic-glow mx-auto"
     >
-      <div className="flex flex-col gap-4 w-full md:w-auto">
-        <div className="flex justify-center items-center w-16 h-16 rounded-full bg-purple-900/30 border border-purple-500/50 shrink-0">
-          <TrophyIcon className="h-8 w-8 text-purple-500" />
+      <div className="flex flex-row items-center gap-4">
+        <div className="flex justify-center items-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-purple-900/30 border border-purple-500/50 shrink-0">
+          <TrophyIcon className="h-6 w-6 sm:h-8 sm:w-8 text-purple-500" />
         </div>
         
+        <div className="flex-1">
+          <div className="flex flex-col justify-between gap-1">
+            <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
+            <p className="text-sm sm:text-base text-cyan-400 font-medium">{date}</p>
+          </div>
+          
+          <p className="text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-medium mt-1">
+            {organization}
+          </p>
+        </div>
+      </div>
+      
+      <div className="flex flex-col sm:flex-row gap-4">
         {imageUrl && (
-          <div className="w-full h-52 md:w-64 md:h-48 relative rounded-lg overflow-hidden bg-black/50">
+          <div className="w-full sm:w-1/3 h-48 relative rounded-lg overflow-hidden bg-black/50 shrink-0 flex-shrink-0">
             <Image
               src={imageUrl}
               alt={`${title} image`}
@@ -55,31 +68,22 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
           </div>
         )}
-      </div>
-      
-      <div className="flex-1 mt-4 md:mt-0">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-          <h3 className="text-xl font-bold text-white">{title}</h3>
-          <p className="text-cyan-400 font-medium md:text-right">{date}</p>
+        
+        <div className={`flex-1 flex flex-col ${imageUrl ? "" : "mt-0"}`}>        
+          <p className="text-sm sm:text-base text-gray-300">{description}</p>
+          
+          {linkedInPost && (
+            <a 
+              href={linkedInPost} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center mt-3 text-sm sm:text-base text-purple-400 hover:text-purple-300 transition-colors"
+            >
+              <LinkIcon className="h-4 w-4 mr-1" />
+              View LinkedIn Post
+            </a>
+          )}
         </div>
-        
-        <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-medium mt-1">
-          {organization}
-        </p>
-        
-        <p className="text-gray-300 mt-2">{description}</p>
-        
-        {linkedInPost && (
-          <a 
-            href={linkedInPost} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center mt-3 text-purple-400 hover:text-purple-300 transition-colors"
-          >
-            <LinkIcon className="h-4 w-4 mr-1" />
-            View LinkedIn Post
-          </a>
-        )}
       </div>
     </motion.div>
   );
@@ -226,7 +230,7 @@ const achievementsData = [
     title: "Third Prize - World Space Week Quiz Competition",
     organization: "ISRO - Indian Space Research Organization",
     date: "Oct 2020",
-    description: "Secured third position in the national-level quiz competition conducted as part of World Space Week celebrations.",
+    description: "Secured third position in the national-level quiz competition conducted as part of World Space Week celebrations."
   }
 ];
 
@@ -266,24 +270,24 @@ const AchievementsPage = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-4 sm:px-8 md:px-16 w-full z-[20]"
+      className="mt-20 sm:mt-40 mb-10 sm:mb-20 px-4 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
         custom={0}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center justify-center text-center mb-12"
+        className="flex flex-col items-center justify-center text-center mb-8 sm:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4 space-title">
+        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3 sm:mb-4 space-title">
           Achievements & Accolades
         </h2>
-        <p className="text-gray-400 text-center max-w-[700px] mb-8">
+        <p className="text-sm sm:text-base text-gray-400 text-center max-w-[700px] mb-6 sm:mb-8">
           Recognitions that mark milestones in my journey of innovation and problem-solving.
         </p>
         
         {/* Search and Filter Bar */}
-        <div className="w-full max-w-[800px] flex flex-col md:flex-row gap-4 mb-8">
+        <div className="w-full max-w-[800px] flex flex-col gap-3 mb-6 sm:mb-8">
           <div className="relative flex-1">
             <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
@@ -291,14 +295,14 @@ const AchievementsPage = () => {
               placeholder="Search achievements..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-black/40 border border-purple-500/30 rounded-lg py-3 pl-10 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent"
+              className="w-full bg-black/40 border border-purple-500/30 rounded-lg py-2 sm:py-3 pl-10 pr-4 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent"
             />
           </div>
           
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2 md:pb-0 md:flex-nowrap">
+          <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
             <button
               onClick={() => setSelectedFilter("all")}
-              className={`px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-all whitespace-nowrap text-sm ${
                 selectedFilter === "all"
                   ? "bg-purple-700 text-white"
                   : "bg-black/40 border border-purple-500/30 text-gray-300 hover:bg-purple-900/30"
@@ -308,7 +312,7 @@ const AchievementsPage = () => {
             </button>
             <button
               onClick={() => setSelectedFilter("hackathons")}
-              className={`px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-all whitespace-nowrap text-sm ${
                 selectedFilter === "hackathons"
                   ? "bg-purple-700 text-white"
                   : "bg-black/40 border border-purple-500/30 text-gray-300 hover:bg-purple-900/30"
@@ -318,7 +322,7 @@ const AchievementsPage = () => {
             </button>
             <button
               onClick={() => setSelectedFilter("competitions")}
-              className={`px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-all whitespace-nowrap text-sm ${
                 selectedFilter === "competitions"
                   ? "bg-purple-700 text-white"
                   : "bg-black/40 border border-purple-500/30 text-gray-300 hover:bg-purple-900/30"
@@ -328,7 +332,7 @@ const AchievementsPage = () => {
             </button>
             <button
               onClick={() => setSelectedFilter("coding")}
-              className={`px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-all whitespace-nowrap text-sm ${
                 selectedFilter === "coding"
                   ? "bg-purple-700 text-white"
                   : "bg-black/40 border border-purple-500/30 text-gray-300 hover:bg-purple-900/30"
@@ -340,7 +344,7 @@ const AchievementsPage = () => {
         </div>
       </motion.div>
 
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-4 sm:gap-8 max-w-4xl mx-auto">
         {filteredAchievements.length > 0 ? (
           filteredAchievements.map((achievement, index) => (
             <AchievementCard

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { FiSearch } from "react-icons/fi";
+import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 
 // Define types for blog items
 export interface BlogPost {
@@ -42,6 +43,7 @@ const blogs: BlogPost[] = [
 const BlogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filteredBlogs, setFilteredBlogs] = useState<BlogPost[]>(blogs); // Initialize with blogs
+  const router = useRouter(); // Initialize router
   
   // Filter blogs based on search term - only depends on searchTerm now
   useEffect(() => {
@@ -52,9 +54,9 @@ const BlogPage: React.FC = () => {
     setFilteredBlogs(results);
   }, [searchTerm]); // Removed blogs dependency
 
-  // Open blog in new tab when clicked
+  // Navigate within the same tab when blog is clicked
   const handleBlogClick = (slug: string): void => {
-    window.open(`/blogs/${slug}`, '_blank');
+    router.push(`/blogs/${slug}`);
   };
 
   return (

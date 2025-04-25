@@ -34,7 +34,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
       <div className="w-full flex justify-center">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-white mt-5">{title}</h3>
+      {/* Added text-center class to ensure title is centered on all devices */}
+      <h3 className="text-xl font-bold text-white mt-5 text-center w-full">{title}</h3>
       <p className="text-gray-400 text-center mt-2">{description}</p>
     </motion.div>
   );
@@ -45,7 +46,8 @@ const ThingsIDo = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="mt-40 mb-20 px-10 md:px-20 w-full z-[20]"
+      // Added more responsive padding for mobile
+      className="mt-40 mb-20 px-4 sm:px-10 md:px-20 w-full z-[20]"
     >
       <motion.div
         variants={slideInFromTop(0)}
@@ -54,7 +56,7 @@ const ThingsIDo = () => {
         animate="visible"
         className="flex flex-col items-center justify-center text-center mb-16"
       >
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
           Things I Do
         </h2>
         <p className="text-gray-400 text-center max-w-[700px]">
@@ -62,7 +64,8 @@ const ThingsIDo = () => {
         </p>
       </motion.div>
 
-      <div className="flex flex-wrap gap-8 justify-center">
+      {/* Improved gap and spacing for mobile */}
+      <div className="flex flex-wrap gap-4 md:gap-8 justify-center">
         <ServiceCard
           icon={<AcademicCapIcon className="h-16 w-16 text-purple-500" />}
           title="Competitive Programming"
