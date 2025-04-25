@@ -20,9 +20,7 @@ const shuffleArray: ShuffleArray<any> = (array) => {
   return shuffledArray;
 };
 
-const GalleryPage = () => {
-  
-  type GalleryItem = { id: number; image: string; size?: number; rotation?: number };
+type GalleryItem = { id: number; image: string; size?: number; rotation?: number };
 
   const originalGalleryItems: GalleryItem[] = [];
 
@@ -31,7 +29,9 @@ const GalleryPage = () => {
       id: i,
       image: `/gallery/${i}.jpeg`
     });
-  }  
+  }
+
+const GalleryPage = () => {  
 
   const [filteredItems, setFilteredItems] = useState<GalleryItem[]>([]);
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
@@ -46,7 +46,7 @@ const GalleryPage = () => {
     }));
     
     setFilteredItems(items);
-  }, [shuffleArray]);
+  }, [originalGalleryItems]);
 
   // Animation variants
   const containerVariants = {

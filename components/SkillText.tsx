@@ -23,7 +23,7 @@ const SkillText = () => {
           variants={slideInFromRight(0.5)}
           className="text-sm sm:text-base text-gray-400 text-center max-w-[700px] mx-auto"
         >
-          A comprehensive toolkit of programming languages, frameworks, and technologies that I've mastered throughout my journey.
+          A comprehensive toolkit of programming languages, frameworks, and technologies that I have mastered throughout my journey.
         </motion.p>
       </div>
     </motion.div>
